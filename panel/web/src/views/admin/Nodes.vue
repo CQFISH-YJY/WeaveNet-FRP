@@ -80,7 +80,7 @@
             <n-input v-model:value="form.address" placeholder="例如 frp.example.com" />
           </n-form-item>
           <n-form-item label="控制端口" path="port">
-            <n-input-number v-model:value="form.port" :min="1" :max="65535" style="width: 100%" placeholder="7000" />
+            <n-input v-model:value="form.port" placeholder="7000" clearable />
           </n-form-item>
           <n-form-item label="限速 (Mbps)" path="speed_limit_mbps">
             <n-input-number v-model:value="form.speed_limit_mbps" :min="0" style="width: 100%" placeholder="0 表示不限速" />
@@ -153,15 +153,16 @@ const rules = {
   port: [
     {
       validator: (rule, value) => {
-        if (value === null || value === undefined || value === '') {
+        const p = Number(value)
+        if (value === null || value === undefined || value === '' || Number.isNaN(p)) {
           return new Error('请输入控制端口')
         }
-        if (value < 1 || value > 65535) {
+        if (p < 1 || p > 65535) {
           return new Error('端口范围 1-65535')
         }
         return true
       },
-      trigger: ['input', 'change', 'blur']
+      trigger: ['input', 'blur']
     }
   ]
 }
@@ -212,7 +213,7 @@ async function handleSave() {
   const payload = {
     name: form.name,
     address: form.address,
-    port: form.port,
+    port: Number(form.port),
     speed_limit_mbps: form.speed_limit_mbps,
     remark: form.remark
   }
