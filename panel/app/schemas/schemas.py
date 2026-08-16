@@ -1,7 +1,7 @@
 """隧道、节点、域名、套餐、统计、工单等业务请求/响应模型。"""
 from __future__ import annotations
 
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, Field, field_validator
 
 TUNNEL_TYPES = (
     "tcp",
@@ -245,6 +245,13 @@ class NodeUpdate(BaseModel):
     port: int | None = Field(default=None, ge=1, le=65535)
     speed_limit_mbps: int | None = Field(default=None, ge=1)
     remark: str | None = Field(default=None, max_length=512)
+
+    @field_validator("port", "speed_limit_mbps", mode="before")
+    @classmethod
+    def _blank_to_none(cls, v: object) -> object:
+        if v is None or v == "":
+            return None
+        return v
 
 
 # ---------- 系统配置 ----------
