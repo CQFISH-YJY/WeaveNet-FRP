@@ -112,7 +112,7 @@
             <path d="M7 16.5h.01"></path>
           </svg>
         </div>
-        <div class="stat-num">{{ nodes|length if nodes else 8 }} 个</div>
+        <div class="stat-num">{{ node_count }} 个</div>
         <div class="stat-label">接入节点</div>
       </div>
       <div class="glass-card stat-card">
@@ -390,10 +390,10 @@
             </span>
             <span>
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 2"></path></svg>
-              {{ item.created_at.strftime('%Y-%m-%d %H:%M') }}
+              {{ item.created_at_text }}
             </span>
           </div>
-          <p class="announce-excerpt">{{ item.content|truncate(120, true) }}</p>
+          <p class="announce-excerpt">{{ item.excerpt }}</p>
           <span class="announce-link">
             阅读全文
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="M13 6l6 6-6 6"></path></svg>

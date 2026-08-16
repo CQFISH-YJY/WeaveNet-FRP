@@ -9,6 +9,8 @@ client/dist/
 client/release/
 client/bin/
 server/bin/
+*.exe
+*.exe~
 
 # 数据库与数据文件
 *.db
@@ -19,6 +21,7 @@ server/bin/
 # 日志
 panel/logs/
 emergency/*.log
+frps-log/
 
 # 环境与密钥
 .env

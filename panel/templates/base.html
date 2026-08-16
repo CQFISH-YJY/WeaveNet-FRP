@@ -29,13 +29,13 @@
         </svg>
       </button>
       <nav class="nav-links" id="navLinks" aria-label="主导航">
-        <a href="/" class="{{ 'active' if current == '/' else '' }}">首页</a>
-        <a href="/download" class="{{ 'active' if current == '/download' else '' }}">下载中心</a>
-        <a href="/docs" class="{{ 'active' if current == '/docs' else '' }}">文档</a>
-        <a href="/announcements" class="{{ 'active' if current == '/announcements' else '' }}">公告</a>
-        <a href="/pricing" class="{{ 'active' if current == '/pricing' else '' }}">定价</a>
-        <a href="/status" class="{{ 'active' if current == '/status' else '' }}">服务状态</a>
-        <a href="/help" class="{{ 'active' if current == '/help' else '' }}">帮助中心</a>
+        <a href="/" class="{% if current == '/' %}active{% endif %}">首页</a>
+        <a href="/download" class="{% if current == '/download' %}active{% endif %}">下载中心</a>
+        <a href="/docs" class="{% if current == '/docs' %}active{% endif %}">文档</a>
+        <a href="/announcements" class="{% if current == '/announcements' %}active{% endif %}">公告</a>
+        <a href="/pricing" class="{% if current == '/pricing' %}active{% endif %}">定价</a>
+        <a href="/status" class="{% if current == '/status' %}active{% endif %}">服务状态</a>
+        <a href="/help" class="{% if current == '/help' %}active{% endif %}">帮助中心</a>
         <span class="nav-auth">
           <a class="btn btn-ghost btn-sm" href="/panel/#/login">登录</a>
           <a class="btn btn-accent btn-sm" href="/panel/#/register">注册</a>

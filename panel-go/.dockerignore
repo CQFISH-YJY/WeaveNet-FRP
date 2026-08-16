@@ -1,0 +1,10 @@
+*.exe
+*.exe~
+*.log
+logs/
+data/
+web/dist/
+templates/
+static/
+.env
+.git/

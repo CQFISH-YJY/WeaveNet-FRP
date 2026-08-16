@@ -1,11 +1,11 @@
-# WeaveNet 织网穿透 服务编排
-# 4 容器：panel / redis / frps / emergency
+# WeaveNet 织网穿透 服务编排（Go 全栈轻量化版）
+# 3 容器：panel / frps / emergency（已去除 Redis）
 # 文档：CQFISH&喵酱出品
 
 services:
   weave-panel:
     build:
-      context: ../panel
+      context: ../panel-go
       dockerfile: Dockerfile
     container_name: weave-panel
     restart: unless-stopped
@@ -13,24 +13,13 @@ services:
       - .env
     environment:
       WEAVE_ENV: production
+      DATABASE_URL: sqlite:////app/data/weavenet.db
     volumes:
       - sqlite_data:/app/data
       - ../panel/logs:/app/logs
       - ../panel/static/downloads:/app/static/downloads:ro
     ports:
       - "8100:8000"
-    depends_on:
-      - weave-redis
-    networks:
-      - weave-net
-
-  weave-redis:
-    image: redis:7-alpine
-    container_name: weave-redis
-    restart: unless-stopped
-    command: ["redis-server", "--appendonly", "yes"]
-    volumes:
-      - redis_data:/data
     networks:
       - weave-net
 
@@ -63,6 +52,8 @@ services:
     env_file:
       - .env
     volumes:
+      - ../emergency/emergency.conf:/app/emergency.conf
+      - ../emergency/logs:/app/logs
       - sqlite_data:/app/data:ro
       - /var/run/docker.sock:/var/run/docker.sock:ro
     ports:
@@ -72,7 +63,6 @@ services:
 
 volumes:
   sqlite_data:
-  redis_data:
 
 networks:
   weave-net:

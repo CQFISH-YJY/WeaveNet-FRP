@@ -3,9 +3,6 @@
 {% block title %}服务状态 - {{ site_name }}{% endblock %}
 
 {% block content %}
-{% set online_nodes = nodes|selectattr('status', 'equalto', 'online')|list %}
-{% set online_count = online_nodes|length %}
-{% set node_count = nodes|length %}
 <section class="page-hero">
   <div class="container">
     <span class="badge">服务状态</span>
@@ -20,18 +17,18 @@
       <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px;">
         <div>
           <div style="font-size: 30px; font-weight: 800;" class="gradient-text">
-            {% if node_count %}{{ (online_count / node_count * 100)|round(1) }}%{% else %}99.9%{% endif %}
+            {% if node_count %}{{ uptime }}%{% else %}99.9%{% endif %}
           </div>
           <div style="color: var(--text-sub); font-size: 14px; margin-top: 4px;">当前可用率</div>
         </div>
         <div>
-          <div style="font-size: 30px; font-weight: 800;" class="gradient-text">{{ online_count }} / {{ node_count or 0 }}</div>
+          <div style="font-size: 30px; font-weight: 800;" class="gradient-text">{{ online_count }} / {{ node_count }}</div>
           <div style="color: var(--text-sub); font-size: 14px; margin-top: 4px;">在线节点</div>
         </div>
       </div>
       <div class="uptime-bar">
         {% if node_count %}
-        <div class="uptime-fill" style="width: {{ (online_count / node_count * 100)|round(1) }}%;"></div>
+        <div class="uptime-fill" style="width: {{ uptime }}%;"></div>
         {% else %}
         <div class="uptime-fill" style="width: 99.9%;"></div>
         {% endif %}
@@ -62,8 +59,8 @@
           </span>
           <span class="chip">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 2"></path></svg>
-            {% if node.last_heartbeat_at %}
-            心跳 {{ node.last_heartbeat_at.strftime('%Y-%m-%d %H:%M') }}
+            {% if node.last_heartbeat_text %}
+            心跳 {{ node.last_heartbeat_text }}
             {% else %}
             暂无心跳
             {% endif %}
