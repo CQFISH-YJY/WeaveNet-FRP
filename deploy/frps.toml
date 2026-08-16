@@ -7,5 +7,5 @@ panelBaseURL = "http://weave-panel:8000"
 
 bindAddr = "0.0.0.0"
 bindPort = 7000
-vhostHTTPPort = 80
-vhostHTTPSPort = 443
+vhostHTTPPort = 8080
+vhostHTTPSPort = 8443

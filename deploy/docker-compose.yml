@@ -45,8 +45,8 @@ services:
       - ./frps.toml:/app/frps.toml:ro
     ports:
       - "7000:7000"
-      - "80:80"
-      - "443:443"
+      - "8080:8080"
+      - "8443:8443"
       - "20000-39999:20000-39999"
     depends_on:
       - weave-panel
