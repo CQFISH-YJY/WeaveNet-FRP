@@ -149,22 +149,7 @@ const speedForm = reactive({ speed_limit_mbps: 0 })
 
 const rules = {
   name: [{ required: true, message: '请输入节点名称', trigger: ['input', 'blur'] }],
-  address: [{ required: true, message: '请输入节点地址', trigger: ['input', 'blur'] }],
-  port: [
-    {
-      validator: (rule, value) => {
-        const p = Number(value)
-        if (value === null || value === undefined || value === '' || Number.isNaN(p)) {
-          return new Error('请输入控制端口')
-        }
-        if (p < 1 || p > 65535) {
-          return new Error('端口范围 1-65535')
-        }
-        return true
-      },
-      trigger: ['input', 'blur']
-    }
-  ]
+  address: [{ required: true, message: '请输入节点地址', trigger: ['input', 'blur'] }]
 }
 
 function isOnline(n) {
@@ -213,8 +198,8 @@ async function handleSave() {
   const payload = {
     name: form.name,
     address: form.address,
-    port: Number(form.port),
-    speed_limit_mbps: form.speed_limit_mbps,
+    port: Number(form.port) || 7000,
+    speed_limit_mbps: Number(form.speed_limit_mbps) || 0,
     remark: form.remark
   }
   try {
