@@ -13,6 +13,7 @@ services:
       - .env
     environment:
       WEAVE_ENV: production
+      PANEL_PORT: "8000"
       DATABASE_URL: sqlite:////app/data/weavenet.db
     volumes:
       - sqlite_data:/app/data
