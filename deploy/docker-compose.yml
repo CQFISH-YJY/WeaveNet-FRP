@@ -17,7 +17,7 @@ services:
       - sqlite_data:/app/data
       - ../panel/logs:/app/logs
     ports:
-      - "8000:8000"
+      - "8100:8000"
     depends_on:
       - weave-redis
     networks:
