@@ -280,7 +280,19 @@ function handleDelete(n) {
 
 async function copyToken(n) {
   try {
-    await navigator.clipboard.writeText(n.agent_token)
+    if (navigator.clipboard && window.isSecureContext) {
+      await navigator.clipboard.writeText(n.agent_token)
+    } else {
+      // 非 HTTPS 环境降级：临时 textarea + execCommand
+      const textarea = document.createElement('textarea')
+      textarea.value = n.agent_token
+      textarea.style.position = 'fixed'
+      textarea.style.opacity = '0'
+      document.body.appendChild(textarea)
+      textarea.select()
+      document.execCommand('copy')
+      document.body.removeChild(textarea)
+    }
     message.success('Agent Token 已复制')
   } catch (e) {
     message.error('复制失败')
