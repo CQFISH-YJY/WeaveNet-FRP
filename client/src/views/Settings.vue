@@ -139,19 +139,12 @@
         </div>
       </div>
 
-      <!-- 服务器与 frpc -->
+      <!-- frpc 与版本 -->
       <div class="card">
         <div class="card-head">
-          <h3>服务器与 frpc</h3>
+          <h3>frpc 与版本</h3>
         </div>
         <div class="setting-list">
-          <div class="setting-row">
-            <span class="setting-info">
-              <strong>面板服务器地址</strong>
-              <small>连接 WeaveNet 面板的 API 地址</small>
-            </span>
-            <input v-model="serverUrl" type="text" class="setting-input" spellcheck="false" placeholder="http://127.0.0.1:8000" @change="saveServerUrl" />
-          </div>
           <div class="setting-row">
             <span class="setting-info">
               <strong>frpc 可执行文件路径</strong>
@@ -220,7 +213,6 @@ import { api } from '../api';
 import { store } from '../store';
 
 const settings = ref({ ...store.appSettings });
-const serverUrl = ref('');
 const frpcPath = ref('');
 const frpcHint = ref('');
 
@@ -230,17 +222,6 @@ async function save() {
     await api.saveAppSettings(settings.value);
   } catch (err) {
     // 忽略
-  }
-}
-
-async function saveServerUrl() {
-  const value = serverUrl.value.trim();
-  if (!value) return;
-  try {
-    const res = await api.setServerUrl(value);
-    store.serverUrl = res.serverUrl;
-  } catch (err) {
-    alert(err.message);
   }
 }
 
@@ -280,7 +261,6 @@ onMounted(async () => {
   }
   try {
     const cfg = await api.getConfig();
-    serverUrl.value = cfg.serverUrl || '';
     frpcPath.value = cfg.frpcPath || '';
     store.version = cfg.version || store.version;
     frpcHint.value = cfg.frpcFound ? `已找到 frpc：${cfg.frpcPath}` : '未找到 frpc.exe，请指定路径';

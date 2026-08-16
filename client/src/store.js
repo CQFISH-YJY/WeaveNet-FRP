@@ -4,7 +4,6 @@ import { reactive } from 'vue';
 export const store = reactive({
   user: null,
   loggedIn: false,
-  serverUrl: 'http://127.0.0.1:8000',
   frpcFound: false,
   frpcPath: '',
   version: '',

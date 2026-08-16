@@ -143,10 +143,6 @@
           </button>
         </div>
         <div class="field">
-          <label>面板服务器地址</label>
-          <input v-model="loginForm.serverUrl" type="text" spellcheck="false" placeholder="http://127.0.0.1:8000" />
-        </div>
-        <div class="field">
           <label>用户名 / 邮箱</label>
           <input v-model="loginForm.username" type="text" autocomplete="username" spellcheck="false" @keydown.enter="doLogin" />
         </div>
@@ -178,7 +174,7 @@ const route = useRoute();
 const showLoginModal = ref(false);
 const loggingIn = ref(false);
 const loginError = ref('');
-const loginForm = reactive({ serverUrl: '', username: '', password: '' });
+const loginForm = reactive({ username: '', password: '' });
 
 const toast = reactive({ show: false, text: '', type: 'info' });
 let toastTimer = null;
@@ -199,25 +195,21 @@ function showToast(text, type = 'info') {
 
 function openLogin() {
   loginError.value = '';
-  loginForm.serverUrl = store.serverUrl;
   showLoginModal.value = true;
 }
 
 async function doLogin() {
-  const serverUrl = loginForm.serverUrl.trim();
   const username = loginForm.username.trim();
   const password = loginForm.password;
-  if (!serverUrl || !username || !password) {
+  if (!username || !password) {
     loginError.value = '请填写完整的登录信息';
     return;
   }
   loggingIn.value = true;
   loginError.value = '';
   try {
-    await api.setServerUrl(serverUrl);
     const data = await api.login({ username, password });
     setUser(data.user || null);
-    store.serverUrl = serverUrl;
     showLoginModal.value = false;
     showToast('登录成功，欢迎回来');
     await refreshAll();
@@ -257,7 +249,6 @@ let statusTimer = null;
 async function init() {
   try {
     const cfg = await api.getConfig();
-    store.serverUrl = cfg.serverUrl || store.serverUrl;
     store.frpcFound = !!cfg.frpcFound;
     store.frpcPath = cfg.frpcPath || '';
     store.version = cfg.version || '';

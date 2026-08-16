@@ -14,7 +14,9 @@ const { spawn } = require('child_process');
 // ===================== 全局状态 =====================
 
 let mainWindow = null;
-let serverUrl = 'http://127.0.0.1:8000'; // 面板 API 地址（可在设置中修改）
+// 内置面板服务器地址（分发版固定，不落盘、不可在界面修改，客户无感知）
+const DEFAULT_SERVER_URL = 'http://64.90.4.13:8100';
+const serverUrl = DEFAULT_SERVER_URL;
 let customFrpcPath = '';                 // 用户自定义 frpc 路径（可空，自动查找）
 let token = '';                          // 登录令牌，仅主进程持有，绝不下发渲染进程
 let currentUser = null;                  // 当前登录用户信息
@@ -52,7 +54,7 @@ function log(...args) {
   console.log('[WeaveNet]', ...args);
 }
 
-// 持久化设置（服务器地址、frpc 路径）到 userData 目录
+// 持久化设置（frpc 路径、应用设置）到 userData 目录；服务器地址为内置常量，不落盘
 function stateFile() {
   return path.join(app.getPath('userData'), 'state.json');
 }
@@ -62,7 +64,6 @@ function loadState() {
   try {
     const raw = fs.readFileSync(stateFile(), 'utf8');
     const data = JSON.parse(raw);
-    if (typeof data.serverUrl === 'string' && data.serverUrl) serverUrl = data.serverUrl;
     if (typeof data.frpcPath === 'string') customFrpcPath = data.frpcPath;
     if (data && typeof data.settings === 'object' && data.settings) {
       appSettings = { ...DEFAULT_SETTINGS, ...data.settings };
@@ -77,7 +78,7 @@ function saveState() {
     fs.mkdirSync(path.dirname(stateFile()), { recursive: true });
     fs.writeFileSync(
       stateFile(),
-      JSON.stringify({ serverUrl, frpcPath: customFrpcPath, settings: appSettings }, null, 2),
+      JSON.stringify({ frpcPath: customFrpcPath, settings: appSettings }, null, 2),
       'utf8'
     );
   } catch (err) {
@@ -432,33 +433,6 @@ ipcMain.handle(
   })
 );
 
-// 设置面板服务器地址
-ipcMain.handle(
-  'set-server-url',
-  handleIpc(async (_event, url) => {
-    const value = String(url || '').trim().replace(/\/+$/, '');
-    if (!value) throw new Error('服务器地址不能为空');
-    let parsed;
-    try {
-      parsed = new URL(value);
-    } catch (err) {
-      throw new Error('服务器地址格式无效，示例：http://127.0.0.1:8000');
-    }
-    if (parsed.protocol !== 'http:' && parsed.protocol !== 'https:') {
-      throw new Error('服务器地址仅支持 http 或 https 协议');
-    }
-    serverUrl = value;
-    saveState();
-    return { serverUrl };
-  })
-);
-
-// 读取当前面板服务器地址
-ipcMain.handle(
-  'get-server-url',
-  handleIpc(async () => ({ serverUrl }))
-);
-
 // 设置 frpc 可执行文件路径（空串表示自动查找）
 ipcMain.handle(
   'set-frpc-path',
@@ -478,11 +452,10 @@ ipcMain.handle(
   })
 );
 
-// 读取客户端配置信息（服务器地址、frpc 路径与是否存在、版本）
+// 读取客户端配置信息（frpc 路径与是否存在、版本）
 ipcMain.handle(
   'get-config',
   handleIpc(async () => ({
-    serverUrl,
     frpcPath: findFrpcPath(),
     frpcFound: !!findFrpcPath(),
     version: app.getVersion(),

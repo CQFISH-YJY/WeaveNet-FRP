@@ -17,7 +17,6 @@ export const api = {
 
   // 配置
   getConfig: () => call('get-config'),
-  setServerUrl: (url) => call('set-server-url', url),
   setFrpcPath: (p) => call('set-frpc-path', p),
 
   // 隧道
