@@ -20,9 +20,6 @@ server/bin/
 panel/logs/
 emergency/*.log
 
-# 客户端安装包发布物（放官网静态目录，不入 git）
-panel/static/downloads/
-
 # 环境与密钥
 .env
 deploy/.env
