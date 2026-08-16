@@ -311,8 +311,16 @@ async function openCreate() {
 }
 
 async function doCreate() {
-  if (!form.value.name || !form.value.node_id || !form.value.local_port) {
-    createError.value = '请填写名称、节点与本地端口';
+  if (!form.value.name) {
+    createError.value = '请填写隧道名称';
+    return;
+  }
+  if (!form.value.node_id) {
+    createError.value = nodes.value.length === 0 ? '暂无可用节点，请联系管理员配置' : '请选择在线节点';
+    return;
+  }
+  if (!form.value.local_port) {
+    createError.value = '请填写本地端口';
     return;
   }
   creating.value = true;

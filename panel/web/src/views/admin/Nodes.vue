@@ -150,7 +150,20 @@ const speedForm = reactive({ speed_limit_mbps: 0 })
 const rules = {
   name: [{ required: true, message: '请输入节点名称', trigger: ['input', 'blur'] }],
   address: [{ required: true, message: '请输入节点地址', trigger: ['input', 'blur'] }],
-  port: [{ required: true, message: '请输入控制端口', trigger: ['change'] }]
+  port: [
+    {
+      validator: (rule, value) => {
+        if (value === null || value === undefined || value === '') {
+          return new Error('请输入控制端口')
+        }
+        if (value < 1 || value > 65535) {
+          return new Error('端口范围 1-65535')
+        }
+        return true
+      },
+      trigger: ['input', 'change', 'blur']
+    }
+  ]
 }
 
 function isOnline(n) {
