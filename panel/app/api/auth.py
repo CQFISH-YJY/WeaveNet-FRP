@@ -205,6 +205,7 @@ def login(
                 "email_verified": user.email_verified,
                 "status": user.status,
                 "points": user.points,
+                "is_admin": user.username == settings.admin_username,
                 "plan_name": user.plan.name if user.plan else "",
                 "plan_expires_at": user.plan_expires_at.isoformat() if user.plan_expires_at else None,
             },

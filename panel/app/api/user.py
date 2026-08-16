@@ -7,6 +7,7 @@ from fastapi import APIRouter, Depends, Request
 from pydantic import BaseModel, EmailStr, Field
 from sqlalchemy.orm import Session
 
+from ..core.config import get_settings
 from ..core.database import get_db
 from ..core.deps import get_current_user
 from ..core.errors import BizError, ConflictError, success
@@ -14,6 +15,8 @@ from ..core.security import generate_email_code, hash_password, verify_password
 from ..models import EmailCode, OperationLog, Session as SessionModel
 from ..models import User
 from ..services.mail import send_verification_code
+
+settings = get_settings()
 
 router = APIRouter(prefix="/api/user", tags=["用户"])
 
@@ -49,6 +52,7 @@ def profile(user: User = Depends(get_current_user)):
             "email_verified": user.email_verified,
             "status": user.status,
             "points": user.points,
+            "is_admin": user.username == settings.admin_username,
             "plan": {
                 "id": user.plan.id if user.plan else None,
                 "name": user.plan.name if user.plan else "",
