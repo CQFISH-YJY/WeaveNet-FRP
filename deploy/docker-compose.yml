@@ -16,6 +16,7 @@ services:
     volumes:
       - sqlite_data:/app/data
       - ../panel/logs:/app/logs
+      - ../panel/static/downloads:/app/static/downloads:ro
     ports:
       - "8100:8000"
     depends_on:
