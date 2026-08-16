@@ -1,0 +1,14 @@
+# WeaveNet 织网穿透 frpc 配置示例
+# 由面板自动生成，用户无需手写；此处为格式参考
+
+serverAddr = "127.0.0.1"
+serverPort = 7000
+
+auth.method = "token"
+auth.token = "u_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+
+name = "web-1"
+type = "tcp"
+localIP = "127.0.0.1"
+localPort = 8080
+remotePort = 20000

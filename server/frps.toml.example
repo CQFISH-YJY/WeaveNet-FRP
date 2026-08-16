@@ -1,0 +1,19 @@
+# WeaveNet 织网穿透 frps 节点配置示例
+# 复制为 frps.toml 后填写实际值
+
+# 节点名称（与管理后台创建的节点一致）
+nodeName = "上海主节点"
+
+# 管理面板签发的 Agent Token（在管理后台节点管理中查看）
+agentToken = "agent_XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
+
+# 面板地址（frps 通过该地址注册与拉取配置）
+panelBaseURL = "http://127.0.0.1:8000"
+
+# 监听地址与控制端口
+bindAddr = "0.0.0.0"
+bindPort = 7000
+
+# HTTP / HTTPS 隧道端口
+vhostHTTPPort = 80
+vhostHTTPSPort = 443

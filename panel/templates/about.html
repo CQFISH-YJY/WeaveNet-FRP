@@ -1,0 +1,65 @@
+{% extends "base.html" %}
+
+{% block title %}关于我们 - {{ site_name }}{% endblock %}
+
+{% block content %}
+<section class="page-hero">
+  <div class="container">
+    <span class="badge">关于我们</span>
+    <h1 class="page-title">关于 WeaveNet 织网穿透</h1>
+    <p class="page-desc">一个由 CQFISH&喵酱出品的准商业级 FRP 内网穿透平台。</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="prose">
+      <div class="glass-card gradient-border">
+        <h2>品牌介绍</h2>
+        <p>WeaveNet 织网穿透是一个面向个人开发者与中小团队的准商业级 FRP 内网穿透平台。平台名称中的「Weave」意为编织，「Net」意为网络，我们希望通过一张稳定、高速、易用的网，把每一台内网设备与公网世界连接起来。</p>
+        <p>平台基于成熟的 FRP 内核深度改造，提供 TCP、UDP、HTTP、HTTPS、STCP、XTCP、KCP 等全类型隧道能力，搭配免配置桌面客户端与图形化面板，让内网穿透从「折腾配置」变成「一键完成」。</p>
+        <p>我们致力于打造一个对普通用户友好、对开发者专业的穿透平台：免费版足够日常使用，会员价格透明合理，所有套餐均不限流量。</p>
+      </div>
+
+      <div class="glass-card" id="concept">
+        <h2>产品理念</h2>
+        <h3>简单</h3>
+        <p>不要求用户读懂复杂的配置文件。注册、创建隧道、连接，三步完成，其余交给平台。</p>
+        <h3>稳定</h3>
+        <p>多节点冗余部署，自动化健康检查与故障切换，服务可用率保持 99.9% 以上，隧道长期稳定在线。</p>
+        <h3>开放</h3>
+        <p>支持全类型隧道协议与多种使用场景，从个人博客到企业内网，都能找到合适的方案。</p>
+        <h3>真诚</h3>
+        <p>价格透明、不限流量、签到可兑换会员。我们希望与用户建立长期信任，而不是一次性的交易。</p>
+      </div>
+
+      <div class="glass-card">
+        <h2>联系方式</h2>
+        <p>无论你是想反馈问题、提出建议，还是洽谈合作，欢迎通过以下方式联系我们：</p>
+        <ul>
+          <li>邮箱：<strong>support@weave.test</strong></li>
+          <li>工单系统：登录面板后在「工单」中提交，工作日 24 小时内响应</li>
+          <li>公告渠道：平台动态请关注<a href="/announcements">公告列表</a>与<a href="/changelog">更新日志</a></li>
+        </ul>
+        <p style="margin-top: 20px;">感谢每一位用户的支持，WeaveNet 期待与你一起，把世界织进网里。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="padding-top: 0;">
+  <div class="container">
+    <div class="cta-banner">
+      <h2>加入 WeaveNet，开始你的穿透之旅</h2>
+      <p>免费注册，立即体验</p>
+      <a class="btn btn-lg" href="/panel/#/register">
+        免费注册
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M5 12h14"></path>
+          <path d="M13 6l6 6-6 6"></path>
+        </svg>
+      </a>
+    </div>
+  </div>
+</section>
+{% endblock %}

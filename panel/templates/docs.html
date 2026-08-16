@@ -1,0 +1,146 @@
+{% extends "base.html" %}
+
+{% block title %}文档 - {{ site_name }}{% endblock %}
+
+{% block content %}
+<section class="page-hero">
+  <div class="container">
+    <span class="badge">使用文档</span>
+    <h1 class="page-title">WeaveNet 使用文档</h1>
+    <p class="page-desc">从快速开始到隧道类型详解，帮助你全面掌握织网穿透的使用方法。</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="prose">
+      <div class="glass-card gradient-border">
+        <h2>快速开始</h2>
+        <p class="lead">五分钟内，把你的第一个内网服务发布到公网。</p>
+        <div class="doc-block">
+          <ol class="step-flow">
+            <li>
+              <span class="step-index">1</span>
+              <div>
+                <h4>注册并登录账号</h4>
+                <p>访问<a href="/panel/#/register">注册页面</a>创建账号，按提示完成邮箱验证后登录面板。</p>
+              </div>
+            </li>
+            <li>
+              <span class="step-index">2</span>
+              <div>
+                <h4>创建隧道</h4>
+                <p>进入「隧道管理」点击新建，选择节点、协议类型，填写本地服务地址与端口，即可获得专属公网地址。</p>
+              </div>
+            </li>
+            <li>
+              <span class="step-index">3</span>
+              <div>
+                <h4>下载并运行客户端</h4>
+                <p>从<a href="/download">下载中心</a>获取 Windows 客户端，安装后用账号登录，隧道配置将自动同步。</p>
+              </div>
+            </li>
+            <li>
+              <span class="step-index">4</span>
+              <div>
+                <h4>从公网访问</h4>
+                <p>客户端显示「已连接」后，即可通过分配的域名+端口地址访问你的内网服务，例如 <code>frp-xg-1.cqfishnet.cn:20001</code>。</p>
+              </div>
+            </li>
+          </ol>
+        </div>
+      </div>
+
+      <div class="glass-card" id="tunnel-types">
+        <h2>隧道类型全家桶</h2>
+        <p>WeaveNet 支持多种隧道类型，覆盖绝大多数使用场景。</p>
+        <div class="doc-block">
+          <h3>TCP 隧道</h3>
+          <p>最通用的隧道类型，适用于 SSH、远程桌面、数据库连接、自建服务等一切基于 TCP 的协议。创建后自动分配公网端口，访问地址形如 <code>frp-xg-1.cqfishnet.cn:20001</code>。</p>
+        </div>
+        <div class="doc-block">
+          <h3>UDP 隧道</h3>
+          <p>适用于 DNS、语音、视频流等基于 UDP 的应用，游戏联机场景强烈推荐。</p>
+        </div>
+        <div class="doc-block">
+          <h3>HTTP 隧道</h3>
+          <p>面向 Web 服务，通过域名访问，适合网站、API 服务。可自动处理 Host 头与路径转发。</p>
+        </div>
+        <div class="doc-block">
+          <h3>HTTPS 隧道</h3>
+          <p>在 HTTP 隧道基础上自动配置 TLS 证书，以 HTTPS 协议访问，更安全，适合需要加密传输的场景。</p>
+        </div>
+        <div class="doc-block">
+          <h3>STCP 隧道</h3>
+          <p>点对点安全内网穿透，仅在两端都安装客户端的设备间建立加密连接，公网不暴露任何端口，安全性最高。</p>
+        </div>
+        <div class="doc-block">
+          <h3>XTCP 隧道</h3>
+          <p>基于 STCP 的点对点直连隧道，支持 P2P 打洞，流量不经过中转节点，速度更快、延迟更低。</p>
+        </div>
+        <div class="doc-block">
+          <h3>KCP 隧道</h3>
+          <p>基于 KCP 协议的隧道，针对弱网环境优化，丢包重传更快，适合网络状况不稳定的场景。</p>
+        </div>
+        <div class="doc-block">
+          <h3>负载均衡</h3>
+          <p>同一组内网服务可配置多台后端，节点将请求按策略分发到不同后端，实现高可用与横向扩容。</p>
+        </div>
+        <div class="doc-block">
+          <h3>域名+端口直连</h3>
+          <p>创建隧道后自动分配专属公网端口，通过「节点域名 + 端口」的形式访问内网服务，无需申请域名、无需配置 DNS，创建即可使用。</p>
+        </div>
+      </div>
+
+      <div class="glass-card">
+        <h2>域名+端口访问说明</h2>
+        <ul>
+          <li>每条隧道创建后自动分配一个公网端口，访问地址格式：<code>节点域名:端口</code>，例如 <code>frp-xg-1.cqfishnet.cn:20001</code>。</li>
+          <li>访问地址在面板「隧道管理」中实时展示，隧道数量与端口配额由当前套餐决定，详见<a href="/pricing">定价页</a>。</li>
+          <li>使用「域名+端口」方式访问无需手动配置 DNS，隧道连接成功后地址即生效。</li>
+          <li>长期无流量的隧道可能被回收端口，请保持正常使用。</li>
+          <li>隧道仅限本人使用，不得用于仿冒、钓鱼等违法用途。</li>
+        </ul>
+      </div>
+
+      <div class="glass-card">
+        <h2>常见问题</h2>
+        <div class="faq-list" style="margin-top: 20px;">
+          <div class="glass-card faq-item">
+            <details>
+              <summary>隧道创建后一直显示离线怎么办？</summary>
+              <div class="faq-answer">
+                <p>请依次检查：客户端是否已登录并运行、本地服务端口是否正确、防火墙是否放行、所选节点是否处于在线状态。</p>
+              </div>
+            </details>
+          </div>
+          <div class="glass-card faq-item">
+            <details>
+              <summary>公网端口一直分配不到怎么办？</summary>
+              <div class="faq-answer">
+                <p>公网端口由节点自动分配，若提示端口已用尽请尝试切换节点，或联系管理员扩充端口池。</p>
+              </div>
+            </details>
+          </div>
+          <div class="glass-card faq-item">
+            <details>
+              <summary>如何查看隧道实时流量？</summary>
+              <div class="faq-answer">
+                <p>登录面板进入「隧道管理」，每条隧道均展示实时上下行流量；桌面客户端托盘也可实时查看。</p>
+              </div>
+            </details>
+          </div>
+          <div class="glass-card faq-item">
+            <details>
+              <summary>更多问题去哪咨询？</summary>
+              <div class="faq-answer">
+                <p>可前往<a href="/help">帮助中心</a>查看完整 FAQ，或登录面板通过工单系统提交问题，我们将尽快处理。</p>
+              </div>
+            </details>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}

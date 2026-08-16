@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="WeaveNet 织网穿透，准商业级内网穿透平台。无需公网 IP，一键穿透内网，随时随地访问你的设备与服务。">
+  <title>{% block title %}{{ site_name }}{% endblock %}</title>
+  <link rel="stylesheet" href="/static/css/site.css">
+</head>
+<body>
+  {% set current = request.url.path %}
+  <header class="site-nav">
+    <div class="container nav-inner">
+      <a class="brand" href="/" aria-label="返回首页">
+        <span class="brand-logo">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="9"></circle>
+            <path d="M3 12h18"></path>
+            <path d="M12 3c2.5 2.6 3.8 5.7 3.8 9S14.5 18.4 12 21c-2.5-2.6-3.8-5.7-3.8-9S9.5 5.6 12 3z"></path>
+          </svg>
+        </span>
+        <span class="brand-text">WeaveNet<em>织网穿透</em></span>
+      </a>
+      <button class="nav-toggle" id="navToggle" type="button" aria-label="切换导航菜单" aria-expanded="false">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+          <path d="M4 7h16"></path>
+          <path d="M4 12h16"></path>
+          <path d="M4 17h16"></path>
+        </svg>
+      </button>
+      <nav class="nav-links" id="navLinks" aria-label="主导航">
+        <a href="/" class="{{ 'active' if current == '/' else '' }}">首页</a>
+        <a href="/download" class="{{ 'active' if current == '/download' else '' }}">下载中心</a>
+        <a href="/docs" class="{{ 'active' if current == '/docs' else '' }}">文档</a>
+        <a href="/announcements" class="{{ 'active' if current == '/announcements' else '' }}">公告</a>
+        <a href="/pricing" class="{{ 'active' if current == '/pricing' else '' }}">定价</a>
+        <a href="/status" class="{{ 'active' if current == '/status' else '' }}">服务状态</a>
+        <a href="/help" class="{{ 'active' if current == '/help' else '' }}">帮助中心</a>
+        <span class="nav-auth">
+          <a class="btn btn-ghost btn-sm" href="/panel/#/login">登录</a>
+          <a class="btn btn-accent btn-sm" href="/panel/#/register">注册</a>
+        </span>
+      </nav>
+    </div>
+  </header>
+
+  <main class="site-main">
+    {% block content %}{% endblock %}
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col footer-brand">
+          <a class="brand" href="/">
+            <span class="brand-logo">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="9"></circle>
+                <path d="M3 12h18"></path>
+                <path d="M12 3c2.5 2.6 3.8 5.7 3.8 9S14.5 18.4 12 21c-2.5-2.6-3.8-5.7-3.8-9S9.5 5.6 12 3z"></path>
+              </svg>
+            </span>
+            <span class="brand-text">WeaveNet<em>织网穿透</em></span>
+          </a>
+          <p>准商业级内网穿透平台，稳定、高速、易用。用心织一张网，连接每一台设备。</p>
+        </div>
+        <div class="footer-col">
+          <h4>产品</h4>
+          <a href="/">首页</a>
+          <a href="/download">下载中心</a>
+          <a href="/docs">文档</a>
+          <a href="/pricing">定价</a>
+        </div>
+        <div class="footer-col">
+          <h4>支持</h4>
+          <a href="/help">帮助中心</a>
+          <a href="/announcements">公告</a>
+          <a href="/status">服务状态</a>
+          <a href="/changelog">更新日志</a>
+        </div>
+        <div class="footer-col">
+          <h4>关于</h4>
+          <a href="/about">关于我们</a>
+          <a href="/about#concept">产品介绍</a>
+          <a href="/terms">服务条款</a>
+          <a href="/privacy">隐私政策</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 WeaveNet 织网穿透 · CQFISH&喵酱出品</p>
+        <p>用心织一张网，连接每一台设备</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      var toggle = document.getElementById('navToggle');
+      var links = document.getElementById('navLinks');
+      if (toggle && links) {
+        toggle.addEventListener('click', function () {
+          var open = links.classList.toggle('open');
+          toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+        });
+      }
+    })();
+  </script>
+  {% block scripts %}{% endblock %}
+</body>
+</html>

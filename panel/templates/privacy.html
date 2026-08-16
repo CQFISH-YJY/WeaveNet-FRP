@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+
+{% block title %}隐私政策 - {{ site_name }}{% endblock %}
+
+{% block content %}
+<section class="page-hero">
+  <div class="container">
+    <span class="badge">隐私政策</span>
+    <h1 class="page-title">隐私政策</h1>
+    <p class="page-desc">我们重视你的隐私，本政策说明我们收集、使用与保护信息的方式。</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <article class="prose">
+      <div class="glass-card gradient-border">
+        <h2>一、数据收集</h2>
+        <p>为向你提供服务，我们仅在必要范围内收集以下信息：</p>
+        <ul>
+          <li><strong>账号信息：</strong>注册时提供的邮箱地址、用户名，以及密码的加密哈希值。</li>
+          <li><strong>隧道配置：</strong>你创建的隧道名称、协议类型、本地服务端口、绑定域名等信息，用于隧道连通与调度。</li>
+          <li><strong>流量统计：</strong>隧道上下行流量、在线时长等聚合数据，用于用量展示与限速控制。</li>
+          <li><strong>节点心跳：</strong>客户端连接节点的时间与状态，用于故障排查与服务质量保障。</li>
+        </ul>
+        <p>我们不会收集与提供服务无关的个人信息，不会监控你的业务流量内容。</p>
+      </div>
+
+      <div class="glass-card">
+        <h2>二、数据加密</h2>
+        <h3>2.1 密码加密</h3>
+        <p>用户密码采用 <strong>bcrypt</strong> 加盐哈希存储。bcrypt 为自适应哈希算法，即使数据库泄露，也无法逆向还原明文密码。</p>
+        <h3>2.2 会话安全</h3>
+        <p>登录会话使用 <strong>64 位随机 Token</strong> 签发，Token 不可预测、不可伪造，过期自动失效，保障会话安全。</p>
+        <h3>2.3 传输加密</h3>
+        <p>全站通过 HTTPS 加密传输，客户端与节点之间的隧道通信亦采用加密通道，防止数据在传输途中被窃听或篡改。</p>
+      </div>
+
+      <div class="glass-card">
+        <h2>三、存储说明</h2>
+        <ul>
+          <li>你的数据存储于平台部署的安全服务器环境中，仅授权运维人员可访问，且访问行为全程留痕。</li>
+          <li>数据仅用于提供本平台服务，我们不会向任何第三方出售或出租你的个人信息。</li>
+          <li>账号注销后，我们将按法律要求删除或匿名化处理你的个人信息与隧道配置。</li>
+          <li>如你需要查询、更正或删除个人数据，可通过 <strong>support@weave.test</strong> 与我们联系，我们将在 7 个工作日内处理。</li>
+          <li>本政策可能随平台发展适时更新，重大变更将通过公告通知。</li>
+        </ul>
+      </div>
+    </article>
+  </div>
+</section>
+{% endblock %}

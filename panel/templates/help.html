@@ -1,0 +1,180 @@
+{% extends "base.html" %}
+
+{% block title %}帮助中心 - {{ site_name }}{% endblock %}
+
+{% block content %}
+<section class="page-hero">
+  <div class="container">
+    <span class="badge">帮助中心</span>
+    <h1 class="page-title">帮助中心</h1>
+    <p class="page-desc">常见问题一网打尽，还有更多疑问？提交工单，我们随时在线。</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="faq-list">
+      <div class="glass-card faq-item">
+        <details>
+          <summary>
+            什么是内网穿透？WeaveNet 能做什么？
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"></path></svg>
+          </summary>
+          <div class="faq-answer">
+            <p>内网穿透是指通过公网中转节点，让没有公网 IP 的内网设备也能被外部访问。WeaveNet 支持远程办公、网站托管、游戏联机、开发调试等场景，创建隧道后即可通过「域名+端口」的公网地址访问内网服务。</p>
+          </div>
+        </details>
+      </div>
+
+      <div class="glass-card faq-item">
+        <details>
+          <summary>
+            如何注册账号？注册后需要邮箱验证吗？
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"></path></svg>
+          </summary>
+          <div class="faq-answer">
+            <p>访问<a href="/panel/#/register">注册页面</a>，填写邮箱、用户名和密码即可完成注册。注册后需要进行邮箱验证：系统会向你的邮箱发送验证链接，点击链接完成验证后账号才可正常使用，这是为了保障账号安全与找回通道。</p>
+          </div>
+        </details>
+      </div>
+
+      <div class="glass-card faq-item">
+        <details>
+          <summary>
+            没收到邮箱验证邮件怎么办？
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"></path></svg>
+          </summary>
+          <div class="faq-answer">
+            <p>请依次检查：垃圾邮件文件夹是否被拦截、邮箱地址是否填写正确、是否超过 10 分钟未验证。确认无误后可在登录页重新发送验证邮件；如仍无法收到，请通过 <strong>support@weave.test</strong> 联系我们人工处理。</p>
+          </div>
+        </details>
+      </div>
+
+      <div class="glass-card faq-item">
+        <details>
+          <summary>
+            如何创建第一条隧道？
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"></path></svg>
+          </summary>
+          <div class="faq-answer">
+            <p>登录面板后进入「隧道管理」点击新建：选择节点与协议类型，填写本地服务地址和端口，保存后自动分配公网地址。随后打开桌面客户端登录，隧道即自动连接上线。详细步骤见<a href="/docs">使用文档</a>。</p>
+          </div>
+        </details>
+      </div>
+
+      <div class="glass-card faq-item">
+        <details>
+          <summary>
+            TCP、UDP、HTTP 等隧道类型有什么区别？
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"></path></svg>
+          </summary>
+          <div class="faq-answer">
+            <p>TCP 隧道适合绝大多数基于 TCP 的服务（SSH、远程桌面、数据库）；UDP 隧道适合语音视频、游戏联机；HTTP/HTTPS 隧道通过域名访问 Web 服务；STCP/XTCP 为点对点安全隧道，公网不暴露端口；KCP 针对弱网优化。详见<a href="/docs#tunnel-types">文档中的隧道类型说明</a>。</p>
+          </div>
+        </details>
+      </div>
+
+      <div class="glass-card faq-item">
+        <details>
+          <summary>
+            创建隧道后如何从公网访问？
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"></path></svg>
+          </summary>
+          <div class="faq-answer">
+            <p>创建隧道后系统自动分配公网端口，访问地址为「节点域名 + 端口」形式，例如 <code>frp-xg-1.cqfishnet.cn:20001</code>。在面板「隧道管理」中可查看每条隧道的公网地址，连接成功后直接访问即可，无需配置 DNS。</p>
+          </div>
+        </details>
+      </div>
+
+      <div class="glass-card faq-item">
+        <details>
+          <summary>
+            客户端连接不上节点，常见原因有哪些？
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"></path></svg>
+          </summary>
+          <div class="faq-answer">
+            <p>常见原因：所选节点处于离线或维护状态（可查看<a href="/status">服务状态</a>）；本地防火墙或安全软件拦截客户端；本地服务端口未启动；网络环境无法访问节点。请逐项排查，必要时提交工单并提供客户端日志。</p>
+          </div>
+        </details>
+      </div>
+
+      <div class="glass-card faq-item">
+        <details>
+          <summary>
+            如何提交工单？多久能得到回复？
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"></path></svg>
+          </summary>
+          <div class="faq-answer">
+            <p>登录面板后进入「工单」模块，点击新建工单，选择问题分类并填写详细描述即可提交。普通工单在工作日 24 小时内响应，会员账号享有优先处理通道。你可以在工单详情中随时查看处理进度。</p>
+          </div>
+        </details>
+      </div>
+
+      <div class="glass-card faq-item">
+        <details>
+          <summary>
+            每日签到积分有什么用？如何兑换会员？
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"></path></svg>
+          </summary>
+          <div class="faq-answer">
+            <p>积分可在面板「积分商城」中兑换会员时长：300 积分 = 1 个月普通会员。每日签到即可获得积分，连续签到奖励更多。兑换后会员即时生效，到期自动回退免费版。</p>
+          </div>
+        </details>
+      </div>
+
+      <div class="glass-card faq-item">
+        <details>
+          <summary>
+            隧道流量和速度受什么影响？
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"></path></svg>
+          </summary>
+          <div class="faq-answer">
+            <p>所有套餐均不限流量。隧道实际速度受会员限速档位（免费 8 / 普通 16 / 高级 24 / 超级 32 Mbps）以及本地网络上行带宽影响。若经常跑满限速，可考虑升级会员获得更高带宽。</p>
+          </div>
+        </details>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="padding-top: 0;">
+  <div class="container">
+    <div class="section-head">
+      <span class="badge badge-cyan">还没解决？</span>
+      <h2 class="section-title">多种渠道联系我们</h2>
+    </div>
+    <div class="grid grid-3" style="max-width: 980px; margin: 0 auto;">
+      <div class="glass-card feature-card">
+        <div class="icon-badge icon-badge-accent">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 11.5a8.4 8.4 0 0 1-9 8.4 8.6 8.6 0 0 1-3.4-.7L3 21l1.8-4.4a8.4 8.4 0 1 1 16.2-5.1z"></path>
+          </svg>
+        </div>
+        <h3 class="feature-title">工单系统</h3>
+        <p class="feature-desc">登录面板进入「工单」提交问题，支持附件与进度跟踪，处理过程全程可追溯。</p>
+      </div>
+      <div class="glass-card feature-card">
+        <div class="icon-badge">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="5" width="18" height="14" rx="2"></rect>
+            <path d="M3 7l9 6 9-6"></path>
+          </svg>
+        </div>
+        <h3 class="feature-title">邮件支持</h3>
+        <p class="feature-desc">发送邮件至 <strong>support@weave.test</strong>，我们会在 1-2 个工作日内回复。</p>
+      </div>
+      <div class="glass-card feature-card">
+        <div class="icon-badge">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18z"></path>
+            <path d="M12 11v5"></path>
+            <path d="M12 8h.01"></path>
+          </svg>
+        </div>
+        <h3 class="feature-title">查阅文档</h3>
+        <p class="feature-desc">先看看<a href="/docs">使用文档</a>与<a href="/announcements">平台公告</a>，大部分问题都能在这里找到答案。</p>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}

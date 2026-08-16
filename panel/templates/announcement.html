@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block title %}{{ announcement.title }} - {{ site_name }}{% endblock %}
+
+{% block content %}
+<section class="page-hero">
+  <div class="container">
+    <span class="badge badge-cyan">公告详情</span>
+    <h1 class="page-title" style="font-size: 32px;">{{ announcement.title }}</h1>
+    <div class="announce-meta" style="justify-content: center; margin-top: 12px;">
+      <span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8z"></path><path d="M4 21c0-4 3.6-6.5 8-6.5s8 2.5 8 6.5"></path></svg>
+        {{ announcement.author or 'WeaveNet 官方' }}
+      </span>
+      <span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 2"></path></svg>
+        {{ announcement.created_at.strftime('%Y-%m-%d %H:%M') }}
+      </span>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <article class="prose">
+      <div class="glass-card gradient-border" style="white-space: pre-line;">
+        {{ announcement.content }}
+      </div>
+      <p style="text-align: center; margin-top: 32px;">
+        <a class="btn btn-ghost" href="/announcements">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M19 12H5"></path>
+            <path d="M11 18l-6-6 6-6"></path>
+          </svg>
+          返回公告列表
+        </a>
+      </p>
+    </article>
+  </div>
+</section>
+{% endblock %}

@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+
+{% block title %}公告列表 - {{ site_name }}{% endblock %}
+
+{% block content %}
+<section class="page-hero">
+  <div class="container">
+    <span class="badge badge-cyan">公告</span>
+    <h1 class="page-title">平台公告</h1>
+    <p class="page-desc">第一时间了解平台更新、维护计划与重要通知。</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    {% if announcement_items %}
+    <div class="grid" style="max-width: 860px; margin: 0 auto;">
+      {% for item in announcement_items %}
+      <a class="glass-card announce-card" href="/announcements/{{ item.id }}">
+        <div class="icon-badge icon-badge-accent" style="width: 44px; height: 44px; border-radius: 12px;">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="width: 22px; height: 22px;">
+            <path d="M4 5h16v11H9l-5 4V5z"></path>
+            <path d="M8 9h8"></path>
+            <path d="M8 12h5"></path>
+          </svg>
+        </div>
+        <div class="announce-body">
+          <h3 class="announce-title">{{ item.title }}</h3>
+          <div class="announce-meta">
+            <span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8z"></path><path d="M4 21c0-4 3.6-6.5 8-6.5s8 2.5 8 6.5"></path></svg>
+              {{ item.author or 'WeaveNet 官方' }}
+            </span>
+            <span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 2"></path></svg>
+              {{ item.created_at.strftime('%Y-%m-%d %H:%M') }}
+            </span>
+          </div>
+          <p class="announce-excerpt">{{ item.content|truncate(140, true) }}</p>
+          <span class="announce-link">
+            阅读全文
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="M13 6l6 6-6 6"></path></svg>
+          </span>
+        </div>
+      </a>
+      {% endfor %}
+    </div>
+    {% else %}
+    <div class="glass-card empty-tip" style="max-width: 640px; margin: 0 auto;">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M4 5h16v11H9l-5 4V5z"></path>
+      </svg>
+      <p>暂无公告，敬请期待。</p>
+    </div>
+    {% endif %}
+  </div>
+</section>
+{% endblock %}

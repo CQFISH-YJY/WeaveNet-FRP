@@ -1,0 +1,472 @@
+{% extends "base.html" %}
+
+{% block title %}首页 - {{ site_name }}{% endblock %}
+
+{% block content %}
+<section class="hero">
+  <div class="container">
+    <div class="hero-grid">
+      <div class="hero-copy">
+        <span class="badge">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="14" height="14">
+            <path d="M12 2l2.4 4.9 5.4.8-3.9 3.8.9 5.4-4.8-2.5-4.8 2.5.9-5.4L4.2 7.7l5.4-.8L12 2z"></path>
+          </svg>
+          准商业级 FRP 穿透平台
+        </span>
+        <h1 class="hero-title">内网穿透，<span class="gradient-text">尽在织网</span></h1>
+        <p class="hero-sub">无需公网 IP，无需复杂配置。WeaveNet 织网穿透帮你一键打通内网与公网，随时随地访问你的设备、网站与服务。</p>
+        <div class="hero-cta">
+          <a class="btn btn-lg" href="/panel/#/register">
+            立即开始
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M5 12h14"></path>
+              <path d="M13 6l6 6-6 6"></path>
+            </svg>
+          </a>
+          <a class="btn btn-ghost btn-lg" href="/download">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+              <path d="M7 10l5 5 5-5"></path>
+              <path d="M12 15V3"></path>
+            </svg>
+            下载客户端
+          </a>
+        </div>
+      </div>
+      <div class="hero-visual glass-card gradient-border">
+        <svg viewBox="0 0 480 320" role="img" aria-label="织网穿透网络拓扑示意">
+          <defs>
+            <linearGradient id="wg" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#0ea5e9"></stop>
+              <stop offset="1" stop-color="#06b6d4"></stop>
+            </linearGradient>
+            <linearGradient id="og" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#f59e0b"></stop>
+              <stop offset="1" stop-color="#f97316"></stop>
+            </linearGradient>
+          </defs>
+          <g stroke="url(#wg)" stroke-width="2" opacity="0.5" fill="none">
+            <path d="M240 62 C 180 130, 120 130, 92 214"></path>
+            <path d="M240 62 C 300 130, 360 130, 388 214"></path>
+            <path d="M240 62 C 240 130, 240 170, 240 240"></path>
+            <path d="M92 232 C 150 268, 330 268, 388 232"></path>
+            <path d="M150 246 C 190 220, 290 220, 330 246"></path>
+          </g>
+          <g fill="#fff">
+            <rect x="231" y="53" width="18" height="18" rx="4"></rect>
+            <rect x="231" y="76" width="18" height="5" rx="2"></rect>
+          </g>
+          <circle cx="240" cy="62" r="27" fill="url(#wg)"></circle>
+          <circle cx="92" cy="232" r="19" fill="#fff" stroke="url(#og)" stroke-width="3"></circle>
+          <circle cx="388" cy="232" r="19" fill="#fff" stroke="url(#og)" stroke-width="3"></circle>
+          <circle cx="240" cy="258" r="19" fill="#fff" stroke="url(#wg)" stroke-width="3"></circle>
+          <g fill="url(#og)">
+            <circle cx="92" cy="232" r="7"></circle>
+            <circle cx="388" cy="232" r="7"></circle>
+          </g>
+          <g fill="url(#wg)">
+            <circle cx="240" cy="258" r="7"></circle>
+          </g>
+          <g fill="url(#wg)" opacity="0.85">
+            <circle cx="150" cy="246" r="5"></circle>
+            <circle cx="330" cy="246" r="5"></circle>
+          </g>
+          <g font-size="13" font-weight="600">
+            <text x="240" y="28" text-anchor="middle" fill="#0ea5e9">WeaveNet 云</text>
+            <text x="92" y="266" text-anchor="middle" fill="#f97316">办公室</text>
+            <text x="388" y="266" text-anchor="middle" fill="#f97316">家里</text>
+            <text x="240" y="292" text-anchor="middle" fill="#0ea5e9">服务器</text>
+          </g>
+        </svg>
+      </div>
+    </div>
+
+    <div class="stats-row">
+      <div class="glass-card stat-card">
+        <div class="stat-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8z"></path>
+            <path d="M4 21c0-4 3.6-6.5 8-6.5s8 2.5 8 6.5"></path>
+          </svg>
+        </div>
+        <div class="stat-num">12,800+</div>
+        <div class="stat-label">注册用户</div>
+      </div>
+      <div class="glass-card stat-card">
+        <div class="stat-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M8 12h8"></path>
+            <circle cx="6" cy="12" r="2.5"></circle>
+            <circle cx="18" cy="12" r="2.5"></circle>
+          </svg>
+        </div>
+        <div class="stat-num">35,600+</div>
+        <div class="stat-label">在线隧道</div>
+      </div>
+      <div class="glass-card stat-card">
+        <div class="stat-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="4" width="18" height="7" rx="2"></rect>
+            <rect x="3" y="13" width="18" height="7" rx="2"></rect>
+            <path d="M7 7.5h.01"></path>
+            <path d="M7 16.5h.01"></path>
+          </svg>
+        </div>
+        <div class="stat-num">{{ nodes|length if nodes else 8 }} 个</div>
+        <div class="stat-label">接入节点</div>
+      </div>
+      <div class="glass-card stat-card">
+        <div class="stat-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 3l7 3v5c0 4.6-3 8.1-7 10-4-1.9-7-5.4-7-10V6l7-3z"></path>
+            <path d="M9 12l2 2 4-4"></path>
+          </svg>
+        </div>
+        <div class="stat-num">99.9%</div>
+        <div class="stat-label">服务可用率</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="features">
+  <div class="container">
+    <div class="section-head">
+      <span class="badge badge-cyan">核心能力</span>
+      <h2 class="section-title">强大功能，开箱即用</h2>
+      <p class="section-desc">从个人开发者到企业用户，WeaveNet 提供覆盖全场景的内网穿透能力。</p>
+    </div>
+    <div class="grid grid-3">
+      <div class="glass-card feature-card">
+        <div class="icon-badge">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 7h13"></path>
+            <path d="M14 4l3 3-3 3"></path>
+            <path d="M20 17H7"></path>
+            <path d="M10 14l-3 3 3 3"></path>
+          </svg>
+        </div>
+        <h3 class="feature-title">TCP / UDP 全类型隧道</h3>
+        <p class="feature-desc">支持 TCP、UDP、HTTP、HTTPS、STCP、XTCP、KCP 等主流协议，一条隧道搞定几乎所有内网服务。</p>
+      </div>
+      <div class="glass-card feature-card">
+        <div class="icon-badge">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="9"></circle>
+            <path d="M3 12h18"></path>
+            <path d="M12 3c2.5 2.6 3.8 5.7 3.8 9S14.5 18.4 12 21c-2.5-2.6-3.8-5.7-3.8-9S9.5 5.6 12 3z"></path>
+          </svg>
+        </div>
+        <h3 class="feature-title">免费三级域名</h3>
+        <p class="feature-desc">注册即送免费三级域名，支持自定义子域名，随时把你的网站、服务发布到公网。</p>
+      </div>
+      <div class="glass-card feature-card">
+        <div class="icon-badge">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="4" width="18" height="12" rx="2"></rect>
+            <path d="M9 20h6"></path>
+            <path d="M12 16v4"></path>
+          </svg>
+        </div>
+        <h3 class="feature-title">免配置桌面客户端</h3>
+        <p class="feature-desc">Windows 桌面客户端开箱即用，登录后自动拉取隧道配置，无需手写配置文件。</p>
+      </div>
+      <div class="glass-card feature-card">
+        <div class="icon-badge">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 20V10"></path>
+            <path d="M10 20V4"></path>
+            <path d="M16 20v-7"></path>
+            <path d="M22 20H2"></path>
+          </svg>
+        </div>
+        <h3 class="feature-title">实时流量统计</h3>
+        <p class="feature-desc">面板实时展示各隧道流量、在线状态与带宽占用，用量一目了然。</p>
+      </div>
+      <div class="glass-card feature-card">
+        <div class="icon-badge icon-badge-accent">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="5" width="18" height="16" rx="2"></rect>
+            <path d="M8 3v4"></path>
+            <path d="M16 3v4"></path>
+            <path d="M3 10h18"></path>
+            <path d="M9 15l2 2 4-4"></path>
+          </svg>
+        </div>
+        <h3 class="feature-title">每日签到积分</h3>
+        <p class="feature-desc">每日签到赢积分，积分可兑换会员时长，让基础会员也能免费升级体验。</p>
+      </div>
+      <div class="glass-card feature-card">
+        <div class="icon-badge">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="9"></circle>
+            <path d="M12 7v5l3 2"></path>
+          </svg>
+        </div>
+        <h3 class="feature-title">7x24 稳定服务</h3>
+        <p class="feature-desc">多节点冗余部署，自动化健康检查与故障切换，保障隧道长期稳定在线。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="padding-top: 0;">
+  <div class="container">
+    <div class="section-head">
+      <span class="badge">应用场景</span>
+      <h2 class="section-title">一个平台，多种用法</h2>
+      <p class="section-desc">无论你在办公室、家里还是路上，内网服务都能随时触达。</p>
+    </div>
+    <div class="grid grid-2">
+      <div class="glass-card scene-card">
+        <div class="icon-badge">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M3 11l9-7 9 7"></path>
+            <path d="M5 10v10h14V10"></path>
+          </svg>
+        </div>
+        <div>
+          <h3 class="scene-title">远程办公</h3>
+          <p class="scene-desc">随时访问公司内网的 OA、NAS、ERP 系统，出差在外也能高效办公。</p>
+        </div>
+      </div>
+      <div class="glass-card scene-card">
+        <div class="icon-badge">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="9"></circle>
+            <path d="M3 12h18"></path>
+            <path d="M12 3a13 13 0 0 1 0 18"></path>
+            <path d="M12 3a13 13 0 0 0 0 18"></path>
+          </svg>
+        </div>
+        <div>
+          <h3 class="scene-title">网站托管</h3>
+          <p class="scene-desc">把本地搭建的网站、博客、接口服务快速发布到公网，随时分享给任何人。</p>
+        </div>
+      </div>
+      <div class="glass-card scene-card">
+        <div class="icon-badge icon-badge-accent">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="7" width="20" height="10" rx="5"></rect>
+            <path d="M7 10v4"></path>
+            <path d="M5 12h4"></path>
+            <path d="M16 11h.01"></path>
+            <path d="M19 13h.01"></path>
+          </svg>
+        </div>
+        <div>
+          <h3 class="scene-title">游戏联机</h3>
+          <p class="scene-desc">与朋友联机玩 Minecraft、泰拉瑞亚等自建服务器游戏，告别局域网限制。</p>
+        </div>
+      </div>
+      <div class="glass-card scene-card">
+        <div class="icon-badge">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="4" width="18" height="16" rx="2"></rect>
+            <path d="M7 9l3 3-3 3"></path>
+            <path d="M13 15h4"></path>
+          </svg>
+        </div>
+        <div>
+          <h3 class="scene-title">开发调试</h3>
+          <p class="scene-desc">本地开发的服务一键暴露公网，方便微信回调、支付回调、Webhook 联调测试。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="padding-top: 0;">
+  <div class="container">
+    <div class="section-head">
+      <span class="badge badge-cyan">快速上手</span>
+      <h2 class="section-title">三步，打通你的第一台设备</h2>
+    </div>
+    <div class="steps-row">
+      <div class="glass-card step-card">
+        <div class="step-num">1</div>
+        <h3 class="step-title">注册账号</h3>
+        <p class="step-desc">在面板注册并登录，完成邮箱验证，即可开始使用。</p>
+      </div>
+      <div class="glass-card step-card">
+        <div class="step-num">2</div>
+        <h3 class="step-title">创建隧道</h3>
+        <p class="step-desc">选择节点与协议，填入本地服务地址，一分钟完成隧道创建。</p>
+      </div>
+      <div class="glass-card step-card">
+        <div class="step-num">3</div>
+        <h3 class="step-title">连接上线</h3>
+        <p class="step-desc">打开桌面客户端登录，隧道自动连通，即可从公网访问你的服务。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="padding-top: 0;">
+  <div class="container">
+    <div class="section-head">
+      <span class="badge">价格方案</span>
+      <h2 class="section-title">从免费到超级，总有一档适合你</h2>
+      <p class="section-desc">全部套餐不限流量，签到积分可兑换会员时长。</p>
+    </div>
+    <div class="pricing-grid">
+      <div class="glass-card price-card">
+        <p class="price-name">免费版</p>
+        <p class="price-desc">个人体验起步</p>
+        <p class="price-amount">¥0<small> / 永久</small></p>
+        <ul class="price-list">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12l5 5L20 6"></path></svg>限速 8 Mbps</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12l5 5L20 6"></path></svg>3 条隧道</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12l5 5L20 6"></path></svg>域名+端口直连</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12l5 5L20 6"></path></svg>流量不限</li>
+        </ul>
+        <a class="btn btn-ghost" href="/panel/#/register">免费注册</a>
+      </div>
+      <div class="glass-card price-card">
+        <p class="price-name">普通会员</p>
+        <p class="price-desc">轻量使用进阶</p>
+        <p class="price-amount">¥6<small> / 月</small></p>
+        <ul class="price-list">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12l5 5L20 6"></path></svg>限速 16 Mbps</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12l5 5L20 6"></path></svg>6 条隧道</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12l5 5L20 6"></path></svg>域名+端口直连</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12l5 5L20 6"></path></svg>流量不限</li>
+        </ul>
+        <a class="btn btn-ghost" href="/pricing">查看详情</a>
+      </div>
+      <div class="glass-card price-card hot gradient-border">
+        <span class="badge price-hot-tag">最受欢迎</span>
+        <p class="price-name">高级会员</p>
+        <p class="price-desc">高频使用推荐</p>
+        <p class="price-amount">¥15<small> / 月</small></p>
+        <ul class="price-list">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12l5 5L20 6"></path></svg>限速 24 Mbps</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12l5 5L20 6"></path></svg>10 条隧道</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12l5 5L20 6"></path></svg>域名+端口直连</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12l5 5L20 6"></path></svg>流量不限</li>
+        </ul>
+        <a class="btn btn-accent" href="/panel/#/login">立即升级</a>
+      </div>
+      <div class="glass-card price-card">
+        <p class="price-name">超级会员</p>
+        <p class="price-desc">专业用户之选</p>
+        <p class="price-amount">¥30<small> / 月</small></p>
+        <ul class="price-list">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12l5 5L20 6"></path></svg>限速 32 Mbps</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12l5 5L20 6"></path></svg>14 条隧道</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12l5 5L20 6"></path></svg>域名+端口直连</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12l5 5L20 6"></path></svg>流量不限</li>
+        </ul>
+        <a class="btn btn-ghost" href="/pricing">查看详情</a>
+      </div>
+    </div>
+    <p class="price-note">每日签到可获积分，<strong>300 积分 = 1 个月普通会员</strong>，详见定价页。</p>
+  </div>
+</section>
+
+<section class="section" style="padding-top: 0;">
+  <div class="container">
+    <div class="section-head">
+      <span class="badge badge-cyan">最新公告</span>
+      <h2 class="section-title">平台动态早知道</h2>
+    </div>
+    {% if announcements %}
+    <div class="grid" style="max-width: 840px; margin: 0 auto;">
+      {% for item in announcements %}
+      <a class="glass-card announce-card" href="/announcements/{{ item.id }}">
+        <div class="icon-badge icon-badge-accent" style="width: 44px; height: 44px; border-radius: 12px;">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="width: 22px; height: 22px;">
+            <path d="M4 5h16v11H9l-5 4V5z"></path>
+            <path d="M8 9h8"></path>
+            <path d="M8 12h5"></path>
+          </svg>
+        </div>
+        <div class="announce-body">
+          <h3 class="announce-title">{{ item.title }}</h3>
+          <div class="announce-meta">
+            <span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8z"></path><path d="M4 21c0-4 3.6-6.5 8-6.5s8 2.5 8 6.5"></path></svg>
+              {{ item.author or 'WeaveNet 官方' }}
+            </span>
+            <span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 2"></path></svg>
+              {{ item.created_at.strftime('%Y-%m-%d %H:%M') }}
+            </span>
+          </div>
+          <p class="announce-excerpt">{{ item.content|truncate(120, true) }}</p>
+          <span class="announce-link">
+            阅读全文
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="M13 6l6 6-6 6"></path></svg>
+          </span>
+        </div>
+      </a>
+      {% endfor %}
+    </div>
+    <p style="text-align: center; margin-top: 28px;">
+      <a class="btn btn-ghost" href="/announcements">查看全部公告</a>
+    </p>
+    {% else %}
+    <div class="glass-card empty-tip" style="max-width: 640px; margin: 0 auto;">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M4 5h16v11H9l-5 4V5z"></path>
+      </svg>
+      <p>暂无公告，敬请期待。</p>
+    </div>
+    {% endif %}
+  </div>
+</section>
+
+<section class="section" style="padding-top: 0;">
+  <div class="container">
+    <div class="section-head">
+      <span class="badge">常见问题</span>
+      <h2 class="section-title">你可能想知道的</h2>
+    </div>
+    <div class="faq-list">
+      <div class="glass-card faq-item">
+        <details>
+          <summary>内网穿透是什么？WeaveNet 能做什么？</summary>
+          <div class="faq-answer">
+            <p>内网穿透让没有公网 IP 的设备也能被公网访问。WeaveNet 通过部署在公网的节点为你的内网服务建立安全隧道，实现远程办公、网站托管、游戏联机等场景。</p>
+          </div>
+        </details>
+      </div>
+      <div class="glass-card faq-item">
+        <details>
+          <summary>免费版和会员有什么区别？</summary>
+          <div class="faq-answer">
+            <p>免费版提供 8 Mbps 限速与 3 条隧道，适合体验；会员版提供更高限速与更多隧道配额。所有套餐均支持域名+端口直连访问，不限流量，详情可查看<a href="/pricing">定价页</a>。</p>
+          </div>
+        </details>
+      </div>
+      <div class="glass-card faq-item">
+        <details>
+          <summary>客户端支持哪些系统？</summary>
+          <div class="faq-answer">
+            <p>目前桌面客户端支持 Windows 10 / 11（x64），macOS 与 Linux 客户端正在开发中，敬请期待。</p>
+          </div>
+        </details>
+      </div>
+    </div>
+    <p style="text-align: center; margin-top: 28px;">
+      <a class="btn btn-ghost" href="/help">前往帮助中心</a>
+    </p>
+  </div>
+</section>
+
+<section class="section" style="padding-top: 0;">
+  <div class="container">
+    <div class="cta-banner">
+      <h2>立即开启你的织网之旅</h2>
+      <p>免费注册，一分钟打通第一条隧道</p>
+      <a class="btn btn-lg" href="/panel/#/register">
+        免费注册
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M5 12h14"></path>
+          <path d="M13 6l6 6-6 6"></path>
+        </svg>
+      </a>
+    </div>
+  </div>
+</section>
+{% endblock %}

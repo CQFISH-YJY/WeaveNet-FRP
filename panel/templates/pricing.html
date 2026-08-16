@@ -1,0 +1,215 @@
+{% extends "base.html" %}
+
+{% block title %}定价 - {{ site_name }}{% endblock %}
+
+{% block content %}
+<section class="page-hero">
+  <div class="container">
+    <span class="badge">定价方案</span>
+    <h1 class="page-title">简单透明的价格</h1>
+    <p class="page-desc">从免费体验到超级会员，所有套餐均不限流量，按需选择。</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="pricing-grid">
+      <div class="glass-card price-card">
+        <p class="price-name">免费版</p>
+        <p class="price-desc">个人体验起步</p>
+        <p class="price-amount">¥0<small> / 永久</small></p>
+        <ul class="price-list">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12l5 5L20 6"></path></svg>隧道限速 8 Mbps</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12l5 5L20 6"></path></svg>3 条隧道</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12l5 5L20 6"></path></svg>域名+端口直连</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12l5 5L20 6"></path></svg>流量不限</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12l5 5L20 6"></path></svg>桌面客户端</li>
+        </ul>
+        <a class="btn btn-ghost" href="/panel/#/register">免费注册</a>
+      </div>
+      <div class="glass-card price-card">
+        <p class="price-name">普通会员</p>
+        <p class="price-desc">轻量使用进阶</p>
+        <p class="price-amount">¥6<small> / 月</small></p>
+        <ul class="price-list">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12l5 5L20 6"></path></svg>隧道限速 16 Mbps</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12l5 5L20 6"></path></svg>6 条隧道</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12l5 5L20 6"></path></svg>域名+端口直连</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12l5 5L20 6"></path></svg>流量不限</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12l5 5L20 6"></path></svg>优先工单支持</li>
+        </ul>
+        <a class="btn btn-ghost" href="/panel/#/login">立即购买</a>
+      </div>
+      <div class="glass-card price-card hot gradient-border">
+        <span class="badge price-hot-tag">最受欢迎</span>
+        <p class="price-name">高级会员</p>
+        <p class="price-desc">高频使用推荐</p>
+        <p class="price-amount">¥15<small> / 月</small></p>
+        <ul class="price-list">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12l5 5L20 6"></path></svg>隧道限速 24 Mbps</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12l5 5L20 6"></path></svg>10 条隧道</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12l5 5L20 6"></path></svg>域名+端口直连</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12l5 5L20 6"></path></svg>流量不限</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12l5 5L20 6"></path></svg>优先工单 + 专属节点</li>
+        </ul>
+        <a class="btn btn-accent" href="/panel/#/login">立即升级</a>
+      </div>
+      <div class="glass-card price-card">
+        <p class="price-name">超级会员</p>
+        <p class="price-desc">专业用户之选</p>
+        <p class="price-amount">¥30<small> / 月</small></p>
+        <ul class="price-list">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12l5 5L20 6"></path></svg>隧道限速 32 Mbps</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12l5 5L20 6"></path></svg>14 条隧道</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12l5 5L20 6"></path></svg>域名+端口直连</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12l5 5L20 6"></path></svg>流量不限</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12l5 5L20 6"></path></svg>专属客服 + 优先调度</li>
+        </ul>
+        <a class="btn btn-ghost" href="/panel/#/login">立即购买</a>
+      </div>
+    </div>
+    <p class="price-note">每日签到可获得积分，<strong>300 积分即可兑换 1 个月普通会员</strong>；会员到期后自动回退至免费版，隧道与数据保留。</p>
+  </div>
+</section>
+
+<section class="section" style="padding-top: 0;">
+  <div class="container">
+    <div class="section-head">
+      <span class="badge badge-cyan">套餐对比</span>
+      <h2 class="section-title">一表看懂所有权益</h2>
+    </div>
+    <div class="glass-card pricing-table-wrap">
+      <table class="pricing-table">
+        <thead>
+          <tr>
+            <th>权益项</th>
+            <th>免费版</th>
+            <th class="tier-highlight">普通会员</th>
+            <th class="tier-highlight">高级会员</th>
+            <th class="tier-highlight">超级会员</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th>价格</th>
+            <td>¥0 / 永久</td>
+            <td>¥6 / 月</td>
+            <td>¥15 / 月</td>
+            <td>¥30 / 月</td>
+          </tr>
+          <tr>
+            <th>隧道限速</th>
+            <td>8 Mbps</td>
+            <td>16 Mbps</td>
+            <td>24 Mbps</td>
+            <td>32 Mbps</td>
+          </tr>
+          <tr>
+            <th>隧道数量</th>
+            <td>3 条</td>
+            <td>6 条</td>
+            <td>10 条</td>
+            <td>14 条</td>
+          </tr>
+          <tr>
+            <th>公网访问</th>
+            <td>域名+端口直连</td>
+            <td>域名+端口直连</td>
+            <td>域名+端口直连</td>
+            <td>域名+端口直连</td>
+          </tr>
+          <tr>
+            <th>流量</th>
+            <td>不限</td>
+            <td>不限</td>
+            <td>不限</td>
+            <td>不限</td>
+          </tr>
+          <tr>
+            <th>全部隧道类型</th>
+            <td><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12l5 5L20 6"></path></svg></span></td>
+            <td><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12l5 5L20 6"></path></svg></span></td>
+            <td><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12l5 5L20 6"></path></svg></span></td>
+            <td><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12l5 5L20 6"></path></svg></span></td>
+          </tr>
+          <tr>
+            <th>桌面客户端</th>
+            <td><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12l5 5L20 6"></path></svg></span></td>
+            <td><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12l5 5L20 6"></path></svg></span></td>
+            <td><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12l5 5L20 6"></path></svg></span></td>
+            <td><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12l5 5L20 6"></path></svg></span></td>
+          </tr>
+          <tr>
+            <th>工单支持</th>
+            <td>标准</td>
+            <td>优先</td>
+            <td>优先 + 专属节点</td>
+            <td>专属客服 + 优先调度</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="padding-top: 0;">
+  <div class="container">
+    <div class="section-head">
+      <span class="badge">签到积分</span>
+      <h2 class="section-title">积分兑换说明</h2>
+    </div>
+    <div class="grid grid-3" style="max-width: 980px; margin: 0 auto;">
+      <div class="glass-card feature-card">
+        <div class="icon-badge icon-badge-accent">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="5" width="18" height="16" rx="2"></rect>
+            <path d="M8 3v4"></path>
+            <path d="M16 3v4"></path>
+            <path d="M3 10h18"></path>
+            <path d="M9 15l2 2 4-4"></path>
+          </svg>
+        </div>
+        <h3 class="feature-title">每日签到</h3>
+        <p class="feature-desc">登录面板每日签到即可获得积分，连续签到奖励更多，签到不间断，会员轻松拿。</p>
+      </div>
+      <div class="glass-card feature-card">
+        <div class="icon-badge">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M8 12h8"></path>
+            <circle cx="6" cy="12" r="2.5"></circle>
+            <circle cx="18" cy="12" r="2.5"></circle>
+          </svg>
+        </div>
+        <h3 class="feature-title">300 积分兑换</h3>
+        <p class="feature-desc">每 300 积分可兑换 1 个月普通会员，兑换后在面板「积分商城」中操作，即时生效。</p>
+      </div>
+      <div class="glass-card feature-card">
+        <div class="icon-badge">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="9"></circle>
+            <path d="M12 7v5l3 2"></path>
+          </svg>
+        </div>
+        <h3 class="feature-title">更多玩法</h3>
+        <p class="feature-desc">参与社区活动、反馈有效 Bug 也可获得积分奖励，具体以面板公告为准。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="padding-top: 0;">
+  <div class="container">
+    <div class="cta-banner">
+      <h2>现在注册，从免费版开始</h2>
+      <p>不满意随时可以升级，会员时长自由选择</p>
+      <a class="btn btn-lg" href="/panel/#/register">
+        免费注册
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M5 12h14"></path>
+          <path d="M13 6l6 6-6 6"></path>
+        </svg>
+      </a>
+    </div>
+  </div>
+</section>
+{% endblock %}

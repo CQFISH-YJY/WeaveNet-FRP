@@ -1,0 +1,70 @@
+{% extends "base.html" %}
+
+{% block title %}更新日志 - {{ site_name }}{% endblock %}
+
+{% block content %}
+<section class="page-hero">
+  <div class="container">
+    <span class="badge badge-cyan">更新日志</span>
+    <h1 class="page-title">更新日志</h1>
+    <p class="page-desc">记录 WeaveNet 织网穿透的每一次成长。</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <article class="prose">
+      <div class="glass-card gradient-border">
+        <span class="badge">最新版本</span>
+        <h2 style="margin-top: 14px;">v0.1.0 · 初始版本发布</h2>
+        <p style="color: var(--text-faint); font-size: 14px;">发布于 2026-08-01</p>
+        <p>WeaveNet 织网穿透首个正式版本上线，这是一个从零打造的准商业级 FRP 内网穿透平台，核心能力如下：</p>
+        <h3>账号体系</h3>
+        <ul>
+          <li>注册 / 登录 / 退出，支持邮箱验证与密码找回。</li>
+          <li>密码 bcrypt 加密存储，64 位随机 Token 会话认证。</li>
+          <li>个人资料与安全设置管理。</li>
+        </ul>
+        <h3>隧道管理</h3>
+        <ul>
+          <li>支持 TCP、UDP、HTTP、HTTPS、STCP、XTCP、KCP 全类型隧道。</li>
+          <li>隧道在线状态实时展示，一键启停与删除。</li>
+          <li>多节点选择与负载均衡支持。</li>
+        </ul>
+        <h3>域名+端口直连</h3>
+        <ul>
+          <li>创建隧道自动分配公网端口，通过「节点域名+端口」访问，无需申请域名。</li>
+          <li>公网地址在面板隧道管理中实时展示。</li>
+        </ul>
+        <h3>桌面客户端</h3>
+        <ul>
+          <li>Windows 10 / 11 x64 免配置客户端。</li>
+          <li>登录自动同步隧道配置，托盘实时流量展示。</li>
+        </ul>
+        <h3>积分与会员</h3>
+        <ul>
+          <li>每日签到积分体系，300 积分兑换 1 个月普通会员。</li>
+          <li>免费版 / 普通 / 高级 / 超级四档会员，全部不限流量。</li>
+        </ul>
+        <h3>平台能力</h3>
+        <ul>
+          <li>工单系统：问题提交、处理进度跟踪。</li>
+          <li>公告系统：平台动态与维护通知。</li>
+          <li>实时流量统计与节点心跳监控。</li>
+        </ul>
+        <p style="margin-top: 20px;">感谢每一位参与内测的用户，期待与你共同织出更广阔的网。</p>
+      </div>
+
+      <div class="glass-card">
+        <h2>后续规划</h2>
+        <ul>
+          <li>macOS / Linux 桌面客户端。</li>
+          <li>更多区域节点与更高带宽档位。</li>
+          <li>团队协作与多成员管理。</li>
+        </ul>
+        <p style="color: var(--text-faint); font-size: 14px;">以上规划仅供参考，具体以实际发布为准。</p>
+      </div>
+    </article>
+  </div>
+</section>
+{% endblock %}

@@ -1,0 +1,33 @@
+# 依赖
+node_modules/
+.venv/
+__pycache__/
+*.pyc
+
+# 构建产物
+client/dist/
+client/release/
+client/bin/
+server/bin/
+
+# 数据库与数据文件
+*.db
+*.db-shm
+*.db-wal
+*.sqlite
+
+# 日志
+panel/logs/
+emergency/*.log
+
+# 客户端安装包发布物（放官网静态目录，不入 git）
+panel/static/downloads/
+
+# 环境与密钥
+.env
+deploy/.env
+
+# 测试与缓存
+.pytest_cache/
+.DS_Store
+Thumbs.db

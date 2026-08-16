@@ -1,0 +1,62 @@
+{
+  "name": "weavenet-client",
+  "version": "0.2.0",
+  "description": "WeaveNet 织网穿透桌面客户端",
+  "main": "main.js",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "start": "electron .",
+    "pack": "electron-builder --win --x64",
+    "pack:dir": "electron-builder --win --x64 --dir"
+  },
+  "keywords": [
+    "weavenet",
+    "frp",
+    "electron"
+  ],
+  "license": "MIT",
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^5.2.1",
+    "electron": "^32.2.0",
+    "electron-builder": "^26.15.3",
+    "vite": "^6.2.0",
+    "vue": "^3.5.13",
+    "vue-router": "^4.5.0"
+  },
+  "build": {
+    "appId": "com.cqfishnet.weavenet",
+    "productName": "WeaveNet织网穿透",
+    "directories": {
+      "output": "release"
+    },
+    "files": [
+      "main.js",
+      "preload.js",
+      "dist/**/*"
+    ],
+    "extraResources": [
+      {
+        "from": "bin/frpc.exe",
+        "to": "bin/frpc.exe"
+      }
+    ],
+    "win": {
+      "target": [
+        "nsis",
+        "portable"
+      ],
+      "artifactName": "${productName}-${version}-${arch}.${ext}"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "WeaveNet织网穿透"
+    },
+    "portable": {
+      "artifactName": "${productName}-${version}-${arch}-portable.${ext}"
+    }
+  }
+}

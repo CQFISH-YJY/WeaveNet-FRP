@@ -1,0 +1,78 @@
+# WeaveNet 织网穿透 服务编排
+# 4 容器：panel / redis / frps / emergency
+# 文档：CQFISH&喵酱出品
+
+services:
+  weave-panel:
+    build:
+      context: ../panel
+      dockerfile: Dockerfile
+    container_name: weave-panel
+    restart: unless-stopped
+    env_file:
+      - .env
+    environment:
+      WEAVE_ENV: production
+    volumes:
+      - sqlite_data:/app/data
+      - ../panel/logs:/app/logs
+    ports:
+      - "8000:8000"
+    depends_on:
+      - weave-redis
+    networks:
+      - weave-net
+
+  weave-redis:
+    image: redis:7-alpine
+    container_name: weave-redis
+    restart: unless-stopped
+    command: ["redis-server", "--appendonly", "yes"]
+    volumes:
+      - redis_data:/data
+    networks:
+      - weave-net
+
+  weave-frps:
+    build:
+      context: ../server
+      dockerfile: Dockerfile
+    container_name: weave-frps
+    restart: unless-stopped
+    env_file:
+      - .env
+    volumes:
+      - ./frps.toml:/app/frps.toml:ro
+    ports:
+      - "7000:7000"
+      - "80:80"
+      - "443:443"
+      - "20000-39999:20000-39999"
+    depends_on:
+      - weave-panel
+    networks:
+      - weave-net
+
+  weave-emergency:
+    build:
+      context: ../emergency
+      dockerfile: Dockerfile
+    container_name: weave-emergency
+    restart: unless-stopped
+    env_file:
+      - .env
+    volumes:
+      - sqlite_data:/app/data:ro
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+    ports:
+      - "9001:9001"
+    networks:
+      - weave-net
+
+volumes:
+  sqlite_data:
+  redis_data:
+
+networks:
+  weave-net:
+    driver: bridge

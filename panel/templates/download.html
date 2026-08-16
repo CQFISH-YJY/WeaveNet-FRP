@@ -1,0 +1,189 @@
+{% extends "base.html" %}
+
+{% block title %}下载中心 - {{ site_name }}{% endblock %}
+
+{% block content %}
+<section class="page-hero">
+  <div class="container">
+    <span class="badge badge-cyan">下载中心</span>
+    <h1 class="page-title">下载 WeaveNet 客户端</h1>
+    <p class="page-desc">免配置桌面客户端，登录即可自动同步隧道配置，开箱即用。</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="glass-card gradient-border download-main-card">
+      <div class="download-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="3" y="4" width="18" height="12" rx="2"></rect>
+          <path d="M9 20h6"></path>
+          <path d="M12 16v4"></path>
+        </svg>
+      </div>
+      <a class="download-big-btn" href="/static/downloads/weavenet-client-0.1.0-win-x64-setup.exe">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+          <path d="M7 10l5 5 5-5"></path>
+          <path d="M12 15V3"></path>
+        </svg>
+        <span class="dl-main">
+          下载 Windows 客户端
+          <span class="dl-sub">weavenet-client v0.1.0 · 76.7 MB · 支持 Win10/11 x64</span>
+        </span>
+      </a>
+      <p class="download-alt">
+        不需要安装？试试
+        <a href="/static/downloads/weavenet-client-0.1.0-win-x64-portable.exe">免安装便携版</a>
+      </p>
+      <div class="download-meta">
+        <span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+            <path d="M7 10l5 5 5-5"></path>
+            <path d="M12 15V3"></path>
+          </svg>
+          版本：v0.1.0
+        </span>
+        <span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="9"></circle>
+            <path d="M12 7v5l3 2"></path>
+          </svg>
+          更新于：2026-08-15
+        </span>
+        <span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 12l5 5L20 6"></path>
+          </svg>
+          免费开源客户端
+        </span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="padding-top: 0;">
+  <div class="container">
+    <div class="section-head">
+      <span class="badge">v0.1.0 更新说明</span>
+      <h2 class="section-title">本次更新内容</h2>
+    </div>
+    <div class="grid grid-2" style="max-width: 900px; margin: 0 auto;">
+      <div class="glass-card feature-card">
+        <div class="icon-badge">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 7h13"></path>
+            <path d="M14 4l3 3-3 3"></path>
+            <path d="M20 17H7"></path>
+            <path d="M10 14l-3 3 3 3"></path>
+          </svg>
+        </div>
+        <h3 class="feature-title">全类型隧道支持</h3>
+        <p class="feature-desc">TCP、UDP、HTTP、HTTPS、STCP、XTCP、KCP 隧道一键创建，客户端自动拉起内核进程。</p>
+      </div>
+      <div class="glass-card feature-card">
+        <div class="icon-badge">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="9"></circle>
+            <path d="M3 12h18"></path>
+            <path d="M12 3c2.5 2.6 3.8 5.7 3.8 9S14.5 18.4 12 21c-2.5-2.6-3.8-5.7-3.8-9S9.5 5.6 12 3z"></path>
+          </svg>
+        </div>
+        <h3 class="feature-title">免配置连接</h3>
+        <p class="feature-desc">登录账号后自动拉取隧道与节点配置，无需手写 frpc 配置文件，全程图形化操作。</p>
+      </div>
+      <div class="glass-card feature-card">
+        <div class="icon-badge">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 20V10"></path>
+            <path d="M10 20V4"></path>
+            <path d="M16 20v-7"></path>
+            <path d="M22 20H2"></path>
+          </svg>
+        </div>
+        <h3 class="feature-title">实时流量面板</h3>
+        <p class="feature-desc">托盘实时显示各隧道上行、下行流量与在线状态，异常断线自动重连并提醒。</p>
+      </div>
+      <div class="glass-card feature-card">
+        <div class="icon-badge">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 3l7 3v5c0 4.6-3 8.1-7 10-4-1.9-7-5.4-7-10V6l7-3z"></path>
+            <path d="M9 12l2 2 4-4"></path>
+          </svg>
+        </div>
+        <h3 class="feature-title">安全连接</h3>
+        <p class="feature-desc">客户端与节点间使用加密通道通信，账号凭据本地安全存储，不在客户端明文保存。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="padding-top: 0;">
+  <div class="container">
+    <div class="section-head">
+      <span class="badge badge-cyan">系统要求</span>
+      <h2 class="section-title">运行环境</h2>
+    </div>
+    <div class="grid grid-2" style="max-width: 900px; margin: 0 auto;">
+      <div class="glass-card">
+        <h3 class="feature-title" style="margin-top: 0;">Windows</h3>
+        <ul class="req-list">
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12l5 5L20 6"></path></svg>
+            支持系统：Windows 10 / 11（64 位）
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12l5 5L20 6"></path></svg>
+            CPU：x64 架构，双核及以上
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12l5 5L20 6"></path></svg>
+            内存：512 MB 及以上
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12l5 5L20 6"></path></svg>
+            磁盘：预留 100 MB 安装空间
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12l5 5L20 6"></path></svg>
+            网络：可正常访问 WeaveNet 节点
+          </li>
+        </ul>
+      </div>
+      <div class="glass-card">
+        <h3 class="feature-title" style="margin-top: 0;">其他平台</h3>
+        <ul class="req-list">
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 4l7 8-7 8"></path></svg>
+            macOS 客户端：开发中，预计后续版本支持
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 4l7 8-7 8"></path></svg>
+            Linux 客户端：开发中，预计后续版本支持
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 4l7 8-7 8"></path></svg>
+            Android / iOS 客户端：规划中
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 4l7 8-7 8"></path></svg>
+            其他平台用户可先通过面板网页端创建隧道，待客户端发布后再行接入
+          </li>
+        </ul>
+        <p style="color: var(--text-faint); font-size: 13.5px; margin-bottom: 0;">客户端动态请关注<a href="/announcements">公告</a>与<a href="/changelog">更新日志</a>。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="padding-top: 0;">
+  <div class="container">
+    <div class="cta-banner">
+      <h2>遇到安装或连接问题？</h2>
+      <p>前往帮助中心查找常见问题，或登录面板提交工单</p>
+      <a class="btn btn-lg" href="/help">前往帮助中心</a>
+    </div>
+  </div>
+</section>
+{% endblock %}
